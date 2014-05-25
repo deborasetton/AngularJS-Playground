@@ -9,7 +9,7 @@ angular.module('angularApp')
     });
 
     $rootScope.$on("$routeChangeSuccess", function (event, current, previous, resolve) {
-      console.log('Route change ended. Current controller is: ' + current.$$route.controller);
+      console.log('Route change ended.');
 
       // Interesting stuff you have access to:
       // current.locals.$template

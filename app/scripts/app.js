@@ -13,7 +13,7 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/about', {
+      .when('/:person/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         resolve: {
