@@ -46,7 +46,7 @@ var loadData = function ($q, $timeout) {
 var loadDataFail = function ($q, $timeout) {
   var deferred = $q.defer();
   $timeout(function () {
-    deferred.reject('Failed reason');
+    deferred.reject('This message should explain why your promise failed.');
   }, 2000);
   return deferred.promise;
 }
