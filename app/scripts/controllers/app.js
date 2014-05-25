@@ -16,4 +16,8 @@ angular.module('angularApp')
       // current.$$route.controller
     });
 
+    $rootScope.$on('$routeChangeError', function (event, current, previous, reason) {
+        console.log('Failed to change route.');
+    });
+
   });

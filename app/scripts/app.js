@@ -20,6 +20,13 @@ angular
           pies: loadData
         }
       })
+      .when('/fail', {
+        template: '<h1>Fail</h1>', // Won't be rendered
+        controller: 'FailingCtrl', // Won't be instantiated
+        resolve: {
+          pies: loadDataFail
+        }
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -34,4 +41,12 @@ var loadData = function ($q, $timeout) {
 
   console.log('Loading route data.');
   return defer.promise;
+}
+
+var loadDataFail = function ($q, $timeout) {
+  var deferred = $q.defer();
+  $timeout(function () {
+    deferred.reject('Failed reason');
+  }, 2000);
+  return deferred.promise;
 }

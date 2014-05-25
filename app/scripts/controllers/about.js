@@ -9,4 +9,8 @@ angular.module('angularApp')
       $location.path('/');
     }
 
+    $scope.changeToFailingRoute = function () {
+      $location.path('/fail');
+    }
+
   });
